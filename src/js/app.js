@@ -1,25 +1,22 @@
-class Character {
-  constructor(character) {
-    this.name = character.name;
-    this.health = character.health;
-  }
-}
+export const magician = { name: 'маг', health: 90 };
+export const healthy = 'healthy';
+export const wounded = 'wounded';
+export const critical = 'critical';
 
-function firstAid(character) {
-  if (character.health > 50) {
-    return ('healthy');
-  } else if ((character.health > 15) && (character.health <= 50)) {
-    return ('wounded');
-  } else if (character.health <= 15) {
-    return ('critical');
+export default function firstAid(e) {
+  if (e.health > 50) {
+    console.log('healthy');
+    return healthy;
+  } else if ((e.health > 15) && (e.health <= 50)) {
+    console.log('wounded');
+    return wounded;
+  } else if (e.health <= 15) {
+    console.log('critical');
+    return critical;
   }
-}
-// Здоровье более 50 - зелёный;
-// Здоровье от 50 и до 15 - жёлтый;
-// Менее 15 - красный.
+};
 
-// Реализуйте функцию, которая на вход принимает объект вида:
-// {name: 'Маг', health: 90}
+firstAid(magician);
 
 import sum from './basic';
 
